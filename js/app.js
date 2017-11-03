@@ -1,0 +1,51 @@
+// Declaro variable numberCard para solicitar el número de tarjeta desde un prompt
+var CreditCardNumber=prompt("ingrese numero de tarjeta");
+
+// si card esta vacio o está ingresando letras
+if(CreditCardNumber===''||isNaN(CreditCardNumber)){
+ // de ser true, brinda un mensaje
+   alert('Esta ingresando un campo vacio o letras, Ingrese los numeros de su tarjeta');
+
+}
+//caso contrario llama a la funcion isValidCard
+else{
+   alert(isValidCard(CreditCardNumber));
+
+}
+function isValidCard(CreditCardNumber) {
+  var message = '';
+  var arrayReverse = [];
+  var size = CreditCardNumber.length;
+  var lastPosition = size - 1;
+  var globalSum = 0;
+  for (var i = lastPosition; i >= 0; i--) {
+    arrayReverse.push(parseInt(CreditCardNumber[i]));
+  }
+
+  for (var j = 1;j <=arrayReverse.length;j++){
+    if( j % 2 === 0){
+      var par = arrayReverse[j-1];
+      var number = par*2;
+      if(number >= 10){
+      var digitOne=parseInt(number/10);
+      var digitTwo=number % 10;
+      arrayReverse[j-1] = digitOne+digitTwo;
+     }
+     else{
+        arrayReverse[j-1] = number;
+     }
+    }
+}
+var sumElement = 0;
+for(var k = 0;k <arrayReverse.length;k++){
+  sumElement += arrayReverse[k];
+}
+var div = sumElement % 10;
+if(div === 0){
+  message = 'Es una tarjeta valida';
+}
+else{
+  message = 'No es una tarjeta valida';
+}
+return message;
+}
