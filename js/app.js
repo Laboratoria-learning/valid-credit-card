@@ -33,10 +33,10 @@ function isValidCard(){
   }
 
   if(sum%10===0){  //verificamos si es divisible entre 10 mostrar que la tarjeta es valida
-    return 'tu número de tarjeta es válido';
+    alert('tu número de tarjeta es válido');
   }
   else{
-    return 'tu número de tarjeta es inválido';
+    alert('tu número de tarjeta es inválido');
   }
 
 }
