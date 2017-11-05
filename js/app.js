@@ -1,4 +1,4 @@
-// Ingresamos numero de tarjetaEjmplo: numero de tarjeta(4551038207641635)
+// Ingresamos numero de tarjeta Ejemplo: tarjeta valida (4551038207641635)
 var numCard = prompt('Ingrese un numero de tarjeta de credito!');
 // Pasar los numeros a un array 
 var numArray = numCard.split(''); 
