@@ -1,38 +1,28 @@
-# Tarjeta de crédito válida
+# validCreditCard
+Definir *arrayReverse* como array  
+Definir *state* como cadena  
+Definir *strNum* como cadena
 
-Crea una web que pida, por medio de un `prompt()`, el número de una tarjeta de
-crédito y confirme su validez según el [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn). 
-Lee este blog que explica [cómo funciona el algoritmo de Luhn](http://www.quobit.mx/asi-funciona-el-algoritmo-de-luhn-para-generar-numeros-de-tarjetas-de-credito.html).
-  
-## Entregables
+Para i<-0, hasta longitud de *strNum* - 1, *i* >= 0, decrementa 1 en 1  
+  Agregar elemento actual a *arrayReverse*  
+fin para
 
-Para cada producto debes entregar **un repositorio de GitHub** que
-contenga:
-1. Archivo `README.md` que explique el **pseudocódigo** de tu solución y su
-**diagrama de flujo**
-2. Archivo `app.js` con el **código** de tu solución
-3. Archivo `index.html` vinculado con tu `app.js`
+Definir *sumPairs como numero igual a 0  
+Definir *oddSum como número e igual a 0
 
-## Tips
+Para i<-0, hasta longitud de *arrayReverse* - 1, *i* >= 0, decrementa 1 en 1  
+  position <- *i* + 1  
+  current <- 1  
 
-A continuación un video de Michelle que te lleva a través del algoritmo de
-Luhn y te da tips para completar este proyecto:
+  si position % 2 == 0 entonces  
+  Definir *result* como númerico  
+  *current* <- arrayReverse[i] * 2  
+  si *current* >= 10 entonces  
+  result <- *current* % 10 + (*current*/10)  
+  *sumPairs* <- *sumPairs* + current  
+  de lo contratio  
+  *oddSum* <- *oddSum* + arrayReverse[i]  
+  Fin del si  
+  Fin del si
 
-[![tips credit card](https://img.youtube.com/vi/f0zL6Ot9y_w/0.jpg)](https://www.youtube.com/watch?v=f0zL6Ot9y_w)
-
-## Consideraciones específicas
-
-1. Tu código debe estar compuesto por 1 función: `isValidCard`
-2. El usuario no debe poder ingresar un campo vacío
-
-## Criterios de evaluación
-
-Se tomarán en cuenta las siguientes consideraciones a la hora de evaluar tu solución:
-
-1. Nombramiento de variables
-2. Indentación
-3. Validación de input: el usuario no debe poder ingresar un campo vacío o de tipo que no corresponda
-4. Estructura de tus archivos
-5. Archivo `README.md` correctamente redactado
-6. Uso de comentarios para hacer tu código más legible
-7. Que el programa cumpla con el propósito requerido
+fin para
