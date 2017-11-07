@@ -1,7 +1,7 @@
 // Programa para validar numero de tarjeta de credito.
 // Función si es tarjeta válida
 function isValidCard(cardNumber) {
-// Declaramos un arreglo vacio
+  // Declaramos un arreglo vacio
   var array = [];
   // Longitud de número de tarjeta
   var size = cardNumber.length;
@@ -17,17 +17,17 @@ function isValidCard(cardNumber) {
   array.reverse();
   // Aplicar fórmula del algoritmo de Luhn
   for (var i = 0; i < size; i++) {
-    // Verificar posiciones pares según computadora
-    // Para humano posición par es para computadora indice impar
+  // Verificar posiciones pares según computadora
+  // Para humano posición par es para computadora indice impar
     if (i % 2 !== 0) {
       // Multiplicar por 2 y verificar si es mayor o igual a 10
       if (array[i] * 2 >= 10) {
         // Obtengo el divisor
-        var d = parseInt(array[i] * 2 / 10);
+        var divisor = parseInt(array[i] * 2 / 10);
         // Obtengo el residuo
-        var r = array[i] * 2 % 10;
+        var residuo = array[i] * 2 % 10;
         // Sumo los digitos
-        digit = d + r;
+        digit = divisor + residuo;
       } else
       // Caso contrario solo se mutiplica por dos
         digit = array[i] * 2;
@@ -51,8 +51,8 @@ do {
   var temp = true;
   var typedato = parseInt(cardNumber);
   // se valida que el número de dígitos sea 13 y sea solo número
-  if (cardNumber.length !== 13 || Number.isInteger(typedato) == false) {
-    // si no ingresó 13 dígitos o no ingresó números, realizar un alert para indicar el error al usuario
+  if (cardNumber.length !== 13 || Number.isInteger(typedato) === false) {
+  // si no ingresó 13 dígitos o no ingresó números, realizar un alert para indicar el error al usuario
     temp = false;
     // volver a pedir que ingrese su número de tarjeta.
     alert('Ingresar solo números de 13 dígitos');
