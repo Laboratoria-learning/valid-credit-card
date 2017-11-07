@@ -18,9 +18,7 @@ function isValidCard(number) {
     if (i % 2 !== 0 && i > 0) {
     // mediante la funcion push se insertan al nuevo array de posicion par
       arraypar.push(newarray[i]);
-    }
-    // de lo contario ir sumando sus valores a sum
-    else {
+    } else {
       sum += parseInt(newarray[i]);
     }
   }
@@ -30,14 +28,12 @@ function isValidCard(number) {
     if (parseInt(arraypar[j]) * 2 < 10) {
     // si es asi se suman los valores a sum
       sum += parseInt(arraypar[j]) * 2;
-    }
-    // de lo contario si es mayor o igual a 10
-    else if (parseInt(arraypar[j]) * 2 >= 10) {
+    } else if (parseInt(arraypar[j]) * 2 >= 10) {
     // se convierte a un string
       var valor = (arraypar[j]).toString();
       // y se crea la variabe sumalength que contiene la suma de sus digitos
       var sumalength = 0;
-      for (var k = 0;k < valor.length;k++); {
+      for (k = 0; k < valor.length;k++); {
         sumalength += parseInt(valor[k]);
       }
       sum += sumalength;
@@ -45,8 +41,7 @@ function isValidCard(number) {
   }
   if (sum % 10 === 0) {
     alert('Su tarjeta es válida');
-  }
-  else {
+  } else {
     alert('Su tarjeta es invalida');
   }
 }
