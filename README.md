@@ -36,3 +36,5 @@ Se tomarán en cuenta las siguientes consideraciones a la hora de evaluar tu sol
 5. Archivo `README.md` correctamente redactado
 6. Uso de comentarios para hacer tu código más legible
 7. Que el programa cumpla con el propósito requerido
+SOLUCIÓN VALIDAR LA TARJETA DE CREDITO CON EL ALGORITMO DE LUHN
+![recursos](assets/docs/DiagramaTarjeta.png)
