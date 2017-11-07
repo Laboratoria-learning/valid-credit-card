@@ -1,38 +1,50 @@
-# Tarjeta de crédito válida
+# Validacion del numero de tarjeta de credito o debito
 
-Crea una web que pida, por medio de un `prompt()`, el número de una tarjeta de
-crédito y confirme su validez según el [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn). 
-Lee este blog que explica [cómo funciona el algoritmo de Luhn](http://www.quobit.mx/asi-funciona-el-algoritmo-de-luhn-para-generar-numeros-de-tarjetas-de-credito.html).
-  
-## Entregables
+## Introduction
 
-Para cada producto debes entregar **un repositorio de GitHub** que
-contenga:
-1. Archivo `README.md` que explique el **pseudocódigo** de tu solución y su
-**diagrama de flujo**
-2. Archivo `app.js` con el **código** de tu solución
-3. Archivo `index.html` vinculado con tu `app.js`
+La validacion del número de tarjeta esta construido en base al algoritmo de Luhn. El algoritmo de Luhn o fórmula de Luhn, también conocida como "algoritmo de módulo 10", es una fórmula de suma de verificación, utilizada para validar una diversidad de números de identificación; como números de tarjetas de crédito, números IMEI, etc.
 
-## Tips
 
-A continuación un video de Michelle que te lleva a través del algoritmo de
-Luhn y te da tips para completar este proyecto:
+## Diagramas de Flujo
 
-[![tips credit card](https://img.youtube.com/vi/f0zL6Ot9y_w/0.jpg)](https://www.youtube.com/watch?v=f0zL6Ot9y_w)
+> Para la solución del programa se presenta el diagrama de flujo.
 
-## Consideraciones específicas
+![Validar Tarjeta](assets/docs/img1.jpg)
 
-1. Tu código debe estar compuesto por 1 función: `isValidCard`
-2. El usuario no debe poder ingresar un campo vacío
+ * En la imagen el diagrama de flujo corresponde al ingreso y validación de datos ingresados, una vez ingresados se invoca a la función inValidCard que se muestra en la siguiente imagen.
 
-## Criterios de evaluación
+![Validar Tarjeta](assets/docs/img2.jpg)
 
-Se tomarán en cuenta las siguientes consideraciones a la hora de evaluar tu solución:
 
-1. Nombramiento de variables
-2. Indentación
-3. Validación de input: el usuario no debe poder ingresar un campo vacío o de tipo que no corresponda
-4. Estructura de tus archivos
-5. Archivo `README.md` correctamente redactado
-6. Uso de comentarios para hacer tu código más legible
-7. Que el programa cumpla con el propósito requerido
+## Pseudocodigo
+
+      funcion isValidCard(tarjeta){
+        declarar inverse
+        convertir inverse a arrar
+        inverse.reverse()
+        declarar adder <- 0
+
+        para(i<-0; i < longitud(inverse); i++){
+             si((i+1) mod 2 === 0){
+               si(inverse[i] * 2 > 9)
+                    inverse[i] = inverse[i] * 2
+               si no
+                    inverse[i] = inverse * 2
+
+             }
+          adder += inverse[i]
+        }
+
+        si(adder mod 10 === 0)
+            Escribir Es valida
+        si no
+            Escribir No es valida
+
+      }
+
+      Escribir Ingrese numero de tarjeta
+      Leer validate
+      si(validate != numero || validate = null)
+          Escribir [Error]
+      si no
+          isValidCard(validate)
