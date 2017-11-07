@@ -1,38 +1,58 @@
-# Tarjeta de crédito válida
+## Validación de Tarjetas
+La siguiente web ha sido diseñada para validar el número de una tarjeta de crédito o débito, según el algoritmo de Luhn.
+Más información sobre el algoritmo de Luhn en el siguiente link: [Algortimo_Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn)
 
-Crea una web que pida, por medio de un `prompt()`, el número de una tarjeta de
-crédito y confirme su validez según el [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn). 
-Lee este blog que explica [cómo funciona el algoritmo de Luhn](http://www.quobit.mx/asi-funciona-el-algoritmo-de-luhn-para-generar-numeros-de-tarjetas-de-credito.html).
-  
-## Entregables
+Diagrama de flujo :
+![Sin titulo](assets/docs/validacard.png "Validar tarjeta")
 
-Para cada producto debes entregar **un repositorio de GitHub** que
-contenga:
-1. Archivo `README.md` que explique el **pseudocódigo** de tu solución y su
-**diagrama de flujo**
-2. Archivo `app.js` con el **código** de tu solución
-3. Archivo `index.html` vinculado con tu `app.js`
+La web esta conformada por una página principal llamada Index.html, en la cual ejecuta la función llamada **isValidCard** alojada en el archivo app.js.
 
-## Tips
+La página obtiene la entrada de datos mediante un **prompt** .
+### Especificaciones de la función isValidaCard
 
-A continuación un video de Michelle que te lleva a través del algoritmo de
-Luhn y te da tips para completar este proyecto:
+Para la función **isValidCard** se implemento lo siguiente :
 
-[![tips credit card](https://img.youtube.com/vi/f0zL6Ot9y_w/0.jpg)](https://www.youtube.com/watch?v=f0zL6Ot9y_w)
+*  Crear una variable **num** con valor obtenido mediante un prompt ("Ingrese número de tarjeta").
+*  Validar si el valor ingresado son solo números y el campo no debe estar vacio.
+```javascript
+do{
+    var num= prompt("Ingrese número")
+  }
+while (!num  || !/^([0-9])*$/.test(num));
+```
+*  Crear dos variables que alojaran valores de mensaje y el acumulador sum :
+```javascript
+var message='';
+var sum =0;
+```
+*  Convertir el valor **num** en un arreglo con los digitos separados. Esto mediante split('') y asignarle una variable.
+```javascript
+var  arrayCard=num.split('');
+```
+*  Revertir el orden de los dígitos dentro del arreglo.
+```javascript
+var arrayReverse = arrayCard.reverse();
+```
+*  Recorrer los dígitos mediante un for, para validar cada dato.
+*  Si el dígito ocupa una posición impar :
+    * Convertirlo a número y multiplicarlo por 2.
+    * Luego validar si este nuevo resultado es >=10
+        * Si es asi:
+            * separar los digitos
+            * Sumar los digitos
+            * Reemplazar la suma sobre el valor incialmente elegido.
 
-## Consideraciones específicas
-
-1. Tu código debe estar compuesto por 1 función: `isValidCard`
-2. El usuario no debe poder ingresar un campo vacío
-
-## Criterios de evaluación
-
-Se tomarán en cuenta las siguientes consideraciones a la hora de evaluar tu solución:
-
-1. Nombramiento de variables
-2. Indentación
-3. Validación de input: el usuario no debe poder ingresar un campo vacío o de tipo que no corresponda
-4. Estructura de tus archivos
-5. Archivo `README.md` correctamente redactado
-6. Uso de comentarios para hacer tu código más legible
-7. Que el programa cumpla con el propósito requerido
+        * Si No es asi :
+            * Reemplazar el número obtenido sobre el valor inicial.
+*  Si el dígito no ocupa una posición impar lo salta y pasa al siguiente.
+*  Convertir los elementos del arreglo que no han sido modificados en números.  
+*  Sumar todos los elementos del arreglo  y alojar el resultado en la variable suma.
+*  Validar según la siguiente condición :
+    * Si
+    ```javascript
+      sum%10==0 ? message = "válido" : message = "inválido"
+    ```
+        *  Mostrar mensaje "válido"
+    * Sino
+        * Mostrar mensaje " Inválido"
+* Mostrar el mensaje en la página web
