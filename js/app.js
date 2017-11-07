@@ -17,7 +17,7 @@ function isValidCard(numCard) {
     // convertimos cada indice del array invertido a entero y almacenamos en "numInteger" 
     numInteger = parseInt(numReverse[i]); 
     // Verificaremos si la posicion es par (i % 2) !== 0) 
-    if ((i + 1) % 2 == 0) { 
+    if ((i + 1) % 2 === 0) { 
       if ((numInteger * 2) >= 10) { 
         sumPar += (((numInteger * 2) % 10) + Math.trunc((numInteger * 2) / 10)); 
       } else { 
@@ -32,4 +32,4 @@ function isValidCard(numCard) {
 } 
 // isValidCard(numCard); 
 // console.log(sumPar + " " + sumImpar); 
-console.log(isValidCard(numCard)); 
+console.log(isValidCard(numCard));
