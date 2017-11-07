@@ -1,38 +1,38 @@
-# Tarjeta de crédito válida
+## Tarjeta de credito valida
 
-Crea una web que pida, por medio de un `prompt()`, el número de una tarjeta de
-crédito y confirme su validez según el [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn). 
-Lee este blog que explica [cómo funciona el algoritmo de Luhn](http://www.quobit.mx/asi-funciona-el-algoritmo-de-luhn-para-generar-numeros-de-tarjetas-de-credito.html).
-  
-## Entregables
+La funcion del programa es pedir al usuario  que digite su numero de  tarjeta de credito
+para que  pueda ser  validada y sea conforme.
 
-Para cada producto debes entregar **un repositorio de GitHub** que
-contenga:
-1. Archivo `README.md` que explique el **pseudocódigo** de tu solución y su
-**diagrama de flujo**
-2. Archivo `app.js` con el **código** de tu solución
-3. Archivo `index.html` vinculado con tu `app.js`
 
-## Tips
+##### En esta ocasion crearemos un programa donde se nos indica si una tarjeta es valida o no.
 
-A continuación un video de Michelle que te lleva a través del algoritmo de
-Luhn y te da tips para completar este proyecto:
+En las siguientes lineas el pseudocodigo nos ayudara a visualizar los pasos a realizar
+nuestro programa de Tarjeta de credito valida por medio del algoritmo de luhn.
 
-[![tips credit card](https://img.youtube.com/vi/f0zL6Ot9y_w/0.jpg)](https://www.youtube.com/watch?v=f0zL6Ot9y_w)
+Primer paso
 
-## Consideraciones específicas
+>Inicio
 
-1. Tu código debe estar compuesto por 1 función: `isValidCard`
-2. El usuario no debe poder ingresar un campo vacío
+declarar una variable para poder ingresar los datos del numero de tarjeta.
 
-## Criterios de evaluación
+>var ==> tarjeta
 
-Se tomarán en cuenta las siguientes consideraciones a la hora de evaluar tu solución:
+Mostrar en pantalla.
 
-1. Nombramiento de variables
-2. Indentación
-3. Validación de input: el usuario no debe poder ingresar un campo vacío o de tipo que no corresponda
-4. Estructura de tus archivos
-5. Archivo `README.md` correctamente redactado
-6. Uso de comentarios para hacer tu código más legible
-7. Que el programa cumpla con el propósito requerido
+>"Digitar el numero de su tarjeta".
+
+Procesar y validar  el numero de la tarjeta con el algoritmo de luhn
+
+Pasar el N° de los digitos que estan en la posicion par ,deben ser multiplicado por 2
+y sumados si son >= 10 .
+
+> n1 , n2 , n3 , n4, n5 ,n6 , n7 ,n8 ,n9 ,n1o , n11, n12,n13 ===> N° de la tarjeta== n(i)
+
+>       2         4      6         8      10         12      ===>Posicion
+
+ n1  +  n2*2 +n3  +  n4*2 +n5  +  n6*2+n7  +  n8*2+n9 + n10*2 +n11 +n12*2+n13 ==== suma total
+
+
+si la suma total y 10 dan como residuo igual a cero la tarjeta es valida.
+
+Fin
