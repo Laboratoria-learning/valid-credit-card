@@ -5,9 +5,7 @@ var card = prompt('Ingrese número de Tarjeta de Credito a Validar:');
 if (card === '' || isNaN(card)) {
 // de ser true, brinda un mensaje
   alert('Esta ingresando campo vacio o letras, Ingrese los datos');
-}
-// caso contrario llama a la funcion isValidCard
-else {
+} else { // caso contrario llama a la funcion isValidCard
   document.write(isValidCard(card));
 }
 // Funcion para validar el # de una tarjeta de crédito
@@ -36,37 +34,30 @@ function isValidCard(num) {
       // Evaluo si el doble de ese número es mayor o igual a 10
       if (doublePair >= 10) {
       // Separamos los digitos del resultado
-        var digitOne = parseInt(doublePair/10);
+        var digitOne = parseInt(doublePair / 10);
         var digitTwo = doublePair % 10;
         // sumamos los  digitos del resultado
         var sumDigit = digitOne + digitTwo;
         // Reemplaza en cada posicion par los nuevos numeros
         newArr[j - 1] = sumDigit;
-      }
-      // caso contrario
-      else {
+      } else {
         // reemplazamos en cada posicion por el doble del elemento
         newArr [j - 1] = doublePair;
       }
-
     }
   }
-  // console.log(newArr);
   // Declaro variable que almacenara la suma de todos los elementos del arreglo nuevo
   var sumElement = 0;
-  for (var k = 0;k < newArr.length;k++) {
+  for (k = 0;k < newArr.length;k++) {
     sumElement += newArr[k];
   }
-
   // Obtenemos el residuo de la division entre 10
   var div = sumElement % 10;
   // Si es igual a 0
   if (div === 0) {
     // la tarjeta es valida
     message = 'Es una tarjeta valida';
-  }
-  // caso contrario
-  else {
+  } else { // caso contrario
     // la tarjeta no es valida
     message = 'No es una tarjeta valida';
   }
