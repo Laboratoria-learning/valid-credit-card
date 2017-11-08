@@ -1,4 +1,3 @@
-/* Solicitando al usuario mediante un prompt que coloque su numero de targeta a validar.*/
 var customerCard = prompt('Ingrese número de tarjeta');
 // Creando una funcion que tenga como parametro cardNumber que a su vez tiene como valor el numero de targeta del usuario.
 function isValidCard(cardNumber) {
@@ -16,20 +15,19 @@ function isValidCard(cardNumber) {
     // Creando un for con variable j que recorre todo mi array y a su vez multiplique los numeros *2.
     for (var j = 0 ;j < arrayNumber.length ;j++) {
       if (j % 2 !== 0) {
-        arrayNumber[j] = arrayNumber[j] * 2
+        arrayNumber[j] = arrayNumber[j] * 2;
       }
-}
+    }
     // recorriendo nuevamente mi array pero esta vez sumando los numeros que tengan dos digitos.
-    for (var k = 0; k < arrayNumber.length; k++) {
-      if (arrayNumber[k] >= 10) {
-        var value = arrayNumber[k] / 10;
-        var result1 = arrayNumber[k] % 10;
+    for (var index = 0; index < arrayNumber.length; index++) {
+      if (arrayNumber[index] >= 10) {
+        var value = arrayNumber[index] / 10;
+        var result1 = arrayNumber[index] % 10;
         var result2 = parseInt(value);
         var result = result1 + result2;
         resultTotal += result;
-      }
-      else if (arrayNumber[k] < 10) {
-        sumValue += arrayNumber[k] * 1;
+      } else if (arrayNumber[index] < 10) {
+        sumValue += arrayNumber[index] * 1;
       }
     }
     // Sumando mis valores multiplicados con mi resultado de la suma de impares .
@@ -37,12 +35,10 @@ function isValidCard(cardNumber) {
     // Validando si el resultado residuo de 10 es 0 y mostrando una alerta que indique que la targeta es valida.
     if (sumResult % 10 === 0) {
       alert(' Su tarjeta es valida');
-    }
-    else
+    } else
       alert(' ingrese los numeros de una tarjeta valida');
-    return [resultTotal, sumValue, result, result1]
-  }
-  else
+    return [resultTotal, sumValue, result, result1];
+  } else
     alert('ingresar valores ');
 }
 
