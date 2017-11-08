@@ -32,7 +32,7 @@ function isValidCard(CreditCardNumber) {
   }
   var sumElement = 0;
   for (var index = 0; index < arrayReverse.length;index++) {
-    sumElement += arrayReverse[k];
+    sumElement += arrayReverse[index];
   }
   var div = sumElement % 10;
   if (div === 0) {
