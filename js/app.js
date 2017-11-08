@@ -30,7 +30,6 @@ function isValidCard(num) {
     if (j % 2 === 0) {
       // Declaro variable que almacena el doble del numero
       var doublePair = newArr[j - 1] * 2;
-      // console.log(doublePair);
       // Evaluo si el doble de ese número es mayor o igual a 10
       if (doublePair >= 10) {
       // Separamos los digitos del resultado
@@ -48,8 +47,8 @@ function isValidCard(num) {
   }
   // Declaro variable que almacenara la suma de todos los elementos del arreglo nuevo
   var sumElement = 0;
-  for (k = 0;k < newArr.length;k++) {
-    sumElement += newArr[k];
+  for (var index = 0;index < newArr.length;index++) {
+    sumElement += newArr[index];
   }
   // Obtenemos el residuo de la division entre 10
   var div = sumElement % 10;
