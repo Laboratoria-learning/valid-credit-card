@@ -1,4 +1,4 @@
-* # Pseudocodigo isValidCard
+ # Pseudocodigo isValidCard
 * function isValidCard(cardNumber)
     * Repetir
        *  mensajecardNumber = 'Ingrese el número de la tarjeta de crédito a validar';
@@ -22,3 +22,5 @@
 * Fin funcion
 # Diagrama de Flujo
 ![diagrama_flujo](assets/docs/diagrama_flujo.jpg)
+## webSite
+* Puede ver el [Proyecto en vivo](https://jennifercarmen.github.io/valid-credit-card/)

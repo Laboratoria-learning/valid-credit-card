@@ -1,11 +1,11 @@
-// valida tarjeta de credito
+// Funcion valida tarjeta de credito
 function isValidCard(cardNumber) {
   // validar que el usuario ingrese el numero de tarjeta
   do {
-    var cardNumber = prompt('Ingrese el número de la tarjeta de crédito a validar');
+    var cardNumber = prompt('Ingrese el numero de la tarjeta de credito a validar(13Digitos)');
     // Agregamos los numeros de la tarjeta a un array en orden inverso y convertimos a cada elemento en tipo numerico
-  } while ((cardNumber.length) <= 0);var reverseCardNumber = cardNumber.split('').reverse().map(Number);
-  var sumArrayElements = ''
+  } while ((cardNumber.length <= 12 || cardNumber.length >= 14));var reverseCardNumber = cardNumber.split('').reverse().map(Number);
+  var sumArrayElements = '';
   var message = '';
   // buscar cada elemento par del array y multiplicar por 2
   for (var i = 1; i < reverseCardNumber.length; i = i + 2) {
@@ -20,7 +20,8 @@ function isValidCard(cardNumber) {
     sumArrayElements += reverseCardNumber[i];
   }
   // devuelve mensaje al usuario
-  (sumArrayElements % 10 === 0) ? message = 'valido' : message = 'invalido';
-  return message;
+  (sumArrayElements % 10 === 0) ? message = 'El numero de tarjeta es valido' : message = 'El numero de tarjeta es invalido';
+  return alert(message);
 }
+// llama a la funcion
 isValidCard();
