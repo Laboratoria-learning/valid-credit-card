@@ -1,38 +1,24 @@
-# Tarjeta de crédito válida
+## TARJETA DE CREDITO VALIDA
 
-Crea una web que pida, por medio de un `prompt()`, el número de una tarjeta de
-crédito y confirme su validez según el [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn). 
-Lee este blog que explica [cómo funciona el algoritmo de Luhn](http://www.quobit.mx/asi-funciona-el-algoritmo-de-luhn-para-generar-numeros-de-tarjetas-de-credito.html).
-  
-## Entregables
+Crea una web que pida, por medio de un prompt(), el número de una tarjeta de crédito y confirme su validez según el algoritmo de Luhn.
+### ALGORITMO DE LUHN
 
-Para cada producto debes entregar **un repositorio de GitHub** que
-contenga:
-1. Archivo `README.md` que explique el **pseudocódigo** de tu solución y su
-**diagrama de flujo**
-2. Archivo `app.js` con el **código** de tu solución
-3. Archivo `index.html` vinculado con tu `app.js`
+La fórmula verifica un número contra su dígito de chequeo incluido, el cual el usualmente agregado a un número de cuenta parcial para generar el número de cuenta completo. Este número de cuenta debe pasar la siguiente prueba:
 
-## Tips
+A partir del dígito de chequeo incluido, el cual está a la derecha de todo el número, ir de derecha a izquierda duplicando cada segundo dígito.
+Sumar los dígitos del resultado: (ejemplo: 10 = 1 + 0 = 1, 14 = 1 + 4 = 5) juntos con los dígitos sin duplicar del número original.
+Si el total de módulo 10 es igual a 0 (si el total termina en cero), entonces el número es válido de acuerdo con la fórmula Luhn, de lo contrario no es válido.
 
-A continuación un video de Michelle que te lleva a través del algoritmo de
-Luhn y te da tips para completar este proyecto:
+### **Consideraciones Específicas**
 
-[![tips credit card](https://img.youtube.com/vi/f0zL6Ot9y_w/0.jpg)](https://www.youtube.com/watch?v=f0zL6Ot9y_w)
+Tu código debe estar compuesto por 1 función: **isValidCard**
 
-## Consideraciones específicas
+El usuario no debe poder ingresar un campo vacío
 
-1. Tu código debe estar compuesto por 1 función: `isValidCard`
-2. El usuario no debe poder ingresar un campo vacío
+### DIAGRAMA DE FLUJO
 
-## Criterios de evaluación
+![recursos](assets/image.png)
 
-Se tomarán en cuenta las siguientes consideraciones a la hora de evaluar tu solución:
+### PSEUDOCODIGO
 
-1. Nombramiento de variables
-2. Indentación
-3. Validación de input: el usuario no debe poder ingresar un campo vacío o de tipo que no corresponda
-4. Estructura de tus archivos
-5. Archivo `README.md` correctamente redactado
-6. Uso de comentarios para hacer tu código más legible
-7. Que el programa cumpla con el propósito requerido
+![recursos](assets/pseudocodigoCard.PNG)
